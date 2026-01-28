@@ -28,7 +28,7 @@
 .hero {
   padding-top: 15rem;
   padding-left: 10rem;
-  padding-bottom: 10rem; 
+  padding-bottom: 10rem;
   background-image: url("images/h1_hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -209,8 +209,6 @@ footer {
   line-height: 1.7rem;
 }
 
-
-
 /* media queries for tablet and mobile */
 /* tablet 768 */
 /* mobile 425 */
@@ -297,7 +295,7 @@ footer {
     justify-content: center;
     gap: 2rem;
   }
-/* 
+  /* 
   .team img{
     width: 90%;
   } */
