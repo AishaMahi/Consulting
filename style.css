@@ -279,6 +279,8 @@ footer .container {
 }
 
 @media (max-width: 480px) {
+
+  /* HERO */
   .hero {
     padding: 8rem 0;
   }
@@ -287,8 +289,19 @@ footer .container {
     font-size: 28px;
   }
 
-  .services-list,
+  /* SERVICES */
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* TEAM */
   .team {
     grid-template-columns: 1fr;
   }
+
+  /* BLOG */
+  .blog img {
+    height: 220px;
+  }
 }
+
