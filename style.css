@@ -1,17 +1,23 @@
 /*Global Reset*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Georgia, "Times New Roman", Times, serif;
+  scrollbar-width: none;
 }
 
 /*Header*/
 .header-top {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin: 1.5rem;
+  justify-content: space-between;
 }
 
 .navigation {
@@ -26,9 +32,7 @@
 
 /*Hero Section*/
 .hero {
-  padding-top: 15rem;
-  padding-left: 10rem;
-  padding-bottom: 10rem;
+  padding: 10rem 0;
   background-image: url("images/h1_hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -44,14 +48,17 @@
 .services {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 3rem;
+  padding: 4rem 0;
 }
 
 .service-heading {
   font-size: 20px;
   font-weight: 800;
+}
+
+.services .container {
+  text-align: center;
 }
 
 .services-list {
@@ -91,11 +98,10 @@
 
 /*Team Section*/
 .team {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 1rem;
-  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .team-container p {
@@ -117,9 +123,15 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  padding: 15px;
+  padding: 3rem 0;
   background-color: rgb(237, 41, 41);
   color: antiquewhite;
+}
+
+.about .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .about-left {
@@ -135,7 +147,7 @@
 
 /*Blog Section*/
 .blogs {
-  padding: 3rem 5rem;
+  padding: 4rem 0;
   background-color: #f9f9f9;
 }
 
@@ -190,11 +202,16 @@
 footer {
   display: flex;
   gap: 5rem;
-  padding: 3rem;
+  padding: 4rem 0;
   background-color: black;
   color: aliceblue;
 }
 
+footer .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
 .col1 {
   line-height: 2rem;
 }
@@ -235,8 +252,7 @@ footer {
   }
 
   .team {
-    flex-wrap: wrap;
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .about {
@@ -290,9 +306,7 @@ footer {
   }
 
   .team {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
   /* 
