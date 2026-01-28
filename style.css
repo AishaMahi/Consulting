@@ -64,7 +64,6 @@
 .services-list img {
   height: 52px;
   padding: 0.4rem;
-  border-radius: 50%;
   color: brown;
 }
 
@@ -209,6 +208,8 @@ footer {
   font-size: 15px;
   line-height: 1.7rem;
 }
+
+
 
 /* media queries for tablet and mobile */
 /* tablet 768 */
