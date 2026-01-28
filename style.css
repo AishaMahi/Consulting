@@ -221,25 +221,58 @@ footer .container {
 /* mobile 425 */
 
 @media (max-width: 768px) {
+
+  /* GLOBAL SAFETY */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  .header-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .navigation {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* HERO */
   .hero-bold {
     font-size: 38px;
   }
 
-  .services-list,
-  .team {
-    grid-template-columns: repeat(2, 1fr);
+  /* SERVICES */
+  .services-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  /* TEAM */
+  .team {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* BLOG */
   .blog-cards {
     grid-template-columns: 1fr;
   }
 
+  /* ABOUT */
   .about .container {
     flex-direction: column;
     text-align: center;
     gap: 1.5rem;
   }
 
+  /* FOOTER */
   footer .container {
     grid-template-columns: 1fr;
   }
