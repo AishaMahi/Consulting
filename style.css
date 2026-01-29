@@ -1,5 +1,4 @@
-/*Global Reset*/
-
+/* ================= GLOBAL RESET ================= */
 
 * {
   margin: 0;
@@ -9,18 +8,31 @@
   scrollbar-width: none;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-/*Header*/
+/* ================= HEADER ================= */
+
 .header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 0;
+  padding: 1.5rem 20px;
 }
 
 .navigation {
@@ -33,18 +45,6 @@
   color: black;
 }
 
-
-/*Hero Section*/
-.hero {
-  padding: 10rem 0;
-  background: url("images/h1_hero.jpg") center/cover no-repeat;
-}
-
-.hero-bold {
-  font-size: 50px;
-  font-weight: 800;
-}
-
 .menu-toggle {
   display: none;
   background: none;
@@ -53,13 +53,23 @@
   cursor: pointer;
 }
 
-/*Services Section*/
-.services {
-  padding: 4rem 0;
+/* ================= HERO ================= */
+
+.hero {
+  padding: 10rem 0;
+  background: url("images/h1_hero.jpg") center / cover no-repeat;
+  overflow: hidden;
 }
 
-.services .container {
-  text-align: initial;
+.hero-bold {
+  font-size: 50px;
+  font-weight: 800;
+}
+
+/* ================= SERVICES ================= */
+
+.services {
+  padding: 4rem 0;
 }
 
 .service-heading {
@@ -70,7 +80,7 @@
 
 .services-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
 }
 
@@ -82,11 +92,11 @@
 
 .serv img {
   height: 52px;
-  margin-bottom: 0.75rem;
+  margin: 0 auto 0.75rem auto;
+  display: block;
 }
 
 .service-head {
-    display: flex;
   font-size: 18px;
   margin-bottom: 0.5rem;
 }
@@ -96,21 +106,23 @@
   line-height: 1.4rem;
 }
 
+/* ================= TEAM ================= */
 
-/*Team Section*/
 .team-container {
   padding: 4rem 0;
+  overflow-x: hidden;
 }
 
-.team-container h2 {
-  text-align: center;
+.team-heading {
   font-size: 24px;
   font-weight: 800;
+  margin-bottom: 2.5rem;
+  text-align: center;
 }
 
 .team {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
 }
 
@@ -120,13 +132,8 @@
   text-align: center;
 }
 
-.team-heading{
-    font-size: 24px;
-  font-weight: 800;
-  margin-bottom: 2.5rem;
-}
+/* ================= ABOUT ================= */
 
-/*About Section*/
 .about {
   padding: 3rem 0;
   background: rgb(237, 41, 41);
@@ -151,14 +158,14 @@
   border: none;
 }
 
-/* Blog Section */
+/* ================= BLOG ================= */
+
 .blogs {
   padding: 4rem 0;
   background: #f9f9f9;
 }
 
 .blog-title {
-  text-align: initial;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 3rem;
@@ -166,7 +173,7 @@
 
 .blog-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
 }
 
@@ -197,7 +204,8 @@
   line-height: 1.6;
 }
 
-/*Footer*/
+/* ================= FOOTER ================= */
+
 footer {
   padding: 4rem 0;
   background: black;
@@ -207,6 +215,7 @@ footer {
 footer .container {
   display: flex;
   gap: 3rem;
+  flex-wrap: wrap;
 }
 
 .foot-content {
@@ -222,18 +231,11 @@ footer .container {
 .col3 h4 {
   padding-bottom: 1rem;
 }
-/* media queries for tablet and mobile */
-/* tablet 768 */
-/* mobile 425 */
+
+/* ================= TABLET (768px) ================= */
 
 @media (max-width: 768px) {
 
-  /* GLOBAL SAFETY */
-  body {
-    overflow-x: hidden;
-  }
-
-  /* HEADER */
   .header-top {
     flex-direction: column;
     align-items: center;
@@ -245,50 +247,62 @@ footer .container {
     flex-wrap: wrap;
   }
 
-  /* HERO */
+  .serv{
+    max-width: 400px;
+  }
+
   .hero-bold {
     font-size: 38px;
   }
 
-  /* SERVICES */
   .services-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
   }
 
-  /* TEAM */
+  .services-list .serv {
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 280px;
+  }
+
   .team {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
   }
 
-  .team img {
-    width: 100%;
-    height: auto;
-    display: block;
+  .team .card {
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 280px;
   }
-.team-container{
-     padding: 1rem 0;
-}
-  /* BLOG */
+
+  .team .card:nth-child(3) {
+    flex: 0 1 calc(50% - 1rem);
+  }
+
   .blog-cards {
     grid-template-columns: 1fr;
   }
 
-  /* ABOUT */
   .about .container {
     flex-direction: column;
     text-align: center;
     gap: 1.5rem;
   }
 
-  /* FOOTER */
   footer .container {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 }
 
+
+/* ================= MOBILE (480px) ================= */
+
 @media (max-width: 480px) {
 
-  /* HERO */
   .hero {
     padding: 8rem 0;
   }
@@ -297,19 +311,9 @@ footer .container {
     font-size: 28px;
   }
 
-  /* SERVICES */
-  .services-list {
-    grid-template-columns: 1fr;
-  }
-
-  /* TEAM */
+  .services-list,
   .team {
     grid-template-columns: 1fr;
-  }
-
-  /* BLOG */
-  .blog img {
-    height: 220px;
   }
 
   .menu-toggle {
@@ -329,5 +333,12 @@ footer .container {
   .navigation.active {
     display: flex;
   }
-}
 
+  .team {
+    justify-items: center;
+  }
+
+  .card {
+    max-width: 300px;
+  }
+}
